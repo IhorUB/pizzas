@@ -77,8 +77,10 @@ let getPizzaInfo = (amount, pizzaMenu) => {
     const topFivePizza = sortAmount.slice(0, 5);
     // get Pizza names from topFivePizza 
     const pizzaNames = topFivePizza.map((elem) => elem.name);
+
     console.log('5 most popular pizzas:', JSON.stringify(pizzaNames, null, 2));
     document.getElementById("top-pizzas").innerHTML = JSON.stringify(pizzaNames, null, 2);
+
     // create object with ingredients for top 5 pizzas
     const pizzaIngredients = {};
     for (const topPizza of topFivePizza) {
@@ -88,6 +90,7 @@ let getPizzaInfo = (amount, pizzaMenu) => {
             value: topPizza.value
         };
     }
+
     const calculatedPizzaIngredients = {};
     const allIngredients = {};
     // calculate all ingredients for each pizzas 
